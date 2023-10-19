@@ -27,7 +27,7 @@ function App() {
       <Row xs={1} md={2} xl={3} className="g-4">
         {notes.map((note) => (
           <Col key={note._id}>
-            <Note note={note}></Note>
+            <Note note={note} className={styles.note}></Note>
           </Col>
         ))}
       </Row>
