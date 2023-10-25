@@ -17,3 +17,14 @@ export async function fetchNotes(): Promise<Note[]> {
   });
   return response.json();
 }
+
+export async function createNote(note: Note): Promise<Note> {
+  const response = await fetchData("http://localhost:8080/api/notes", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(note),
+  });
+  return response.json();
+}
